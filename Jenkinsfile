@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t praveen300420/nodedemo:$1 .'
+                sh 'docker build -t praveen300420/nodedemo:${1} .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push praveen300420/nodedemo:$1'
+                sh 'docker push praveen300420/nodedemo:${1}'
             }
         }
 }
