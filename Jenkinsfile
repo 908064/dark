@@ -8,8 +8,9 @@ pipeline {
             steps{
                 sh 'git --version'
                 sh 'whoami'
+                sh 'git clone https://github.com/majesticteam23/nodedemo.git'
 
-            git 'https://github.com/majesticteam23/nodedemo.git'
+           j
             }
         }
 
