@@ -6,6 +6,9 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
+                sh 'git --version'
+                sh 'whoami'
+
             git 'https://github.com/majesticteam23/nodedemo.git'
             }
         }
