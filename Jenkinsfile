@@ -29,7 +29,13 @@ pipeline {
                 sh 'docker push majesticteam47/nodetest:latest'
             }
         }
-}
+    }
+    post{
+        always{
+            sh 'docker logout'
+
+        }
+    }
 
 }
 
