@@ -14,8 +14,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t majesticteam47/nodetest:latest  /path/to/dockerfile_directory
-'
+                sh 'docker docker buildx build -t majesticteam47/nodetest:latest /path/to/dockerfile_directory'
             }
         }
         stage('login to dockerhub') {
