@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t majesticteam47/nodetest:latest'
+                sh 'docker build -t majesticteam47/nodedemo:latest'
             }
         }
         stage('login to dockerhub') {
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push majesticteam47/nodetest:latest'
+                sh 'docker push majesticteam47/nodedemo:tagname'
             }
         }
     }
