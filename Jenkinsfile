@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'test2'
-                sh 'docker build -t majesticteam47/nodedemo:latest'
+                sh 'docker build -t majesticteam47/nodedemo:latest .'
             }
         }
 
