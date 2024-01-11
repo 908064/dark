@@ -15,7 +15,8 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t majesticteam47/nodedemo:latest .'
+                
+                sh 'sudo docker build -t majesticteam47/nodedemo:latest'
             }
         }
 
