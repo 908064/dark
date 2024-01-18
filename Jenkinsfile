@@ -2,14 +2,14 @@ pipeline {
     agent any 
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+        DOCKERHUB_CREDENTIALS = credentials('docker23')
     }
 
     stages {
         stage('SCM Checkout') {
             steps {
                 sh 'rm -rf nodedemo || true'  // Remove existing directory if it exists
-                sh 'git clone https://github.com/majesticteam23/nodedemo.git'
+                sh 'git clonehttps://github.com/908064/dark.git '
                 echo 'test1'
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage('Login to DockerHub') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'docker23', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
                         sh "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD"
                     }
                     echo 'test3'
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push majesticteam47/nodedemo:latest'
+                sh 'docker push kannan313/nodedemo:latest'
             }
         }
     }
